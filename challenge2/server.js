@@ -8,7 +8,7 @@ const fsMemoryStats = '/proc/meminfo';
 const pid = process.pid;
 const env = process.env;
 
-// Sample data
+
 const books = [
     { id: 1, title: 'Book 1', author: 'Author 1' },
     { id: 2, title: 'Book 2', author: 'Author 2' },
@@ -17,7 +17,7 @@ const books = [
 
 const memoryKeys = ['MemFree', 'MemAvailable'];
 
-// Route to get all books
+
 app.get('/api/stats', (req, res) => {
 
     response = {};
@@ -55,12 +55,12 @@ app.get('/api/stats', (req, res) => {
     res.json(response);
 });
 
-// Route to get all books
+
 app.get('/api/books', (req, res) => {
     res.json(books);
 });
 
-// Route to get a specific book by ID
+
 app.get('/api/books/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const book = books.find(b => b.id === id);
@@ -73,7 +73,7 @@ app.get('/api/books/:id', (req, res) => {
 
 
 
-// Start the server
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
